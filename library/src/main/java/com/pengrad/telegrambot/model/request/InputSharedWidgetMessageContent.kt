@@ -2,14 +2,23 @@ package com.pengrad.telegrambot.model.request
 
 import com.pengrad.telegrambot.model.MessageEntity
 
-class InputSharedWidgetMessageContent @JvmOverloads constructor(
+class InputSharedWidgetMessageContent private constructor(
     @get:JvmName("widgetId") val widgetId: String,
-    @get:JvmName("chatData") var chatData: String? = null,
-    @get:JvmName("caption") var caption: String? = null,
-    @get:JvmName("parseMode") var parseMode: ParseMode? = null,
-    @get:JvmName("captionEntities") var captionEntities: Array<MessageEntity>? = null,
-    @get:JvmName("showCaptionAboveMedia") var showCaptionAboveMedia: Boolean? = null,
+    @get:JvmName("chatData") var chatData: String?,
+    @get:JvmName("caption") var caption: String?,
+    @get:JvmName("parseMode") var parseMode: ParseMode?,
+    @get:JvmName("captionEntities") var captionEntities: Array<MessageEntity>?,
+    @get:JvmName("showCaptionAboveMedia") var showCaptionAboveMedia: Boolean?,
 ) : InputMessageContent() {
+
+    constructor(widgetId: String) : this(
+        widgetId = widgetId,
+        chatData = null,
+        caption = null,
+        parseMode = null,
+        captionEntities = null,
+        showCaptionAboveMedia = null,
+    )
 
     fun chatData(chatData: String) = apply { this.chatData = chatData }
 

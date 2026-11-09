@@ -2,19 +2,33 @@ package com.pengrad.telegrambot.model.request
 
 import com.pengrad.telegrambot.model.MessageEntity
 
-class InputWidgetMessageContent @JvmOverloads constructor(
+class InputWidgetMessageContent private constructor(
     @get:JvmName("html") val html: String,
-    @get:JvmName("width") var width: Int? = null,
-    @get:JvmName("height") var height: Int? = null,
-    @get:JvmName("publicData") var publicData: String? = null,
-    @get:JvmName("chatData") var chatData: String? = null,
-    @get:JvmName("caption") var caption: String? = null,
-    @get:JvmName("parseMode") var parseMode: ParseMode? = null,
-    @get:JvmName("captionEntities") var captionEntities: Array<MessageEntity>? = null,
-    @get:JvmName("showCaptionAboveMedia") var showCaptionAboveMedia: Boolean? = null,
-    @get:JvmName("allowQueries") var allowQueries: Boolean? = null,
-    @get:JvmName("isShared") var isShared: Boolean? = null,
+    @get:JvmName("width") var width: Int?,
+    @get:JvmName("height") var height: Int?,
+    @get:JvmName("publicData") var publicData: String?,
+    @get:JvmName("chatData") var chatData: String?,
+    @get:JvmName("caption") var caption: String?,
+    @get:JvmName("parseMode") var parseMode: ParseMode?,
+    @get:JvmName("captionEntities") var captionEntities: Array<MessageEntity>?,
+    @get:JvmName("showCaptionAboveMedia") var showCaptionAboveMedia: Boolean?,
+    @get:JvmName("allowQueries") var allowQueries: Boolean?,
+    @get:JvmName("isShared") var isShared: Boolean?,
 ) : InputMessageContent() {
+
+    constructor(html: String) : this(
+        html = html,
+        width = null,
+        height = null,
+        publicData = null,
+        chatData = null,
+        caption = null,
+        parseMode = null,
+        captionEntities = null,
+        showCaptionAboveMedia = null,
+        allowQueries = null,
+        isShared = null,
+    )
 
     fun width(width: Int) = apply { this.width = width }
 
