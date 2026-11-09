@@ -73,7 +73,7 @@ class BotApi104Test {
         val theme = chat.shareTheme() as ChatShareThemeEmoji
         assertEquals(EmojiTypeEmoji("x"), theme.emojis[0])
         assertEquals(EmojiTypeCustomEmoji("c"), theme.emojis[1])
-        assertEquals(7, theme.backgroundBackdropId)
+        assertEquals(7L, theme.backgroundBackdropId)
     }
 
     @Test

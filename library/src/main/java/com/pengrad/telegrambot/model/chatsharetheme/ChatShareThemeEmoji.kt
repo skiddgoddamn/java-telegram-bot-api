@@ -2,7 +2,7 @@ package com.pengrad.telegrambot.model.chatsharetheme
 
 data class ChatShareThemeEmoji @JvmOverloads constructor(
     @get:JvmName("emojis") val emojis: Array<EmojiType>,
-    @get:JvmName("backgroundBackdropId") val backgroundBackdropId: Int? = null,
+    @get:JvmName("backgroundBackdropId") val backgroundBackdropId: Long? = null,
     override val type: String = ChatShareTheme.EMOJI
 ) : ChatShareTheme {
 
@@ -16,7 +16,7 @@ data class ChatShareThemeEmoji @JvmOverloads constructor(
 
     override fun hashCode(): Int {
         var result = emojis.contentHashCode()
-        result = 31 * result + (backgroundBackdropId ?: 0)
+        result = 31 * result + (backgroundBackdropId?.hashCode() ?: 0)
         result = 31 * result + type.hashCode()
         return result
     }
