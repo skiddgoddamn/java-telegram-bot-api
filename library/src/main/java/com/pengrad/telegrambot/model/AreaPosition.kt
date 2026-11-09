@@ -1,6 +1,6 @@
-package com.pengrad.telegrambot.model.story.area
+package com.pengrad.telegrambot.model
 
-data class StoryAreaPosition(
+data class AreaPosition(
     @get:JvmName("xPercentage") val xPercentage: Double,
     @get:JvmName("yPercentage") val yPercentage: Double,
     @get:JvmName("widthPercentage") val widthPercentage: Double,
